@@ -1,0 +1,34 @@
+[
+    {
+        "model-name": "deliveryGuyDetails",
+        "resource-file": "delivery_guy_details.json"
+    },
+    {
+        "model-name": "vehicleDetails",
+        "resource-file": "vehicle_details.json"
+    },
+    {
+        "model-name": "bankAccountDetails",
+        "resource-file": "bank_account_details.json"
+    },
+    {
+        "model-name": "MoneyChanges",
+        "resource-file": "money_changes.json"
+    },
+    {
+        "model-name": "DiscountCode",
+        "resource-file": "discount_codes.json"
+    },
+    {
+        "model-name": "OrderRequest",
+        "resource-file": "order_requests.json"
+    },
+    {
+        "model-name": "OrderPickDrop",
+        "resource-file": "order_pick_drops.json"
+    },
+    {
+        "model-name": "DriverToRequest",
+        "resource-file": "driver_to_requests.json"
+    }
+]

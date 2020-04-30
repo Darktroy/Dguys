@@ -10,15 +10,12 @@ use App\Http\Requests\APIRequest;
 
 
 
-class DriverStatusandLoctionFormRequest extends APIRequest
+class listOneOrderRequestFormRequest extends APIRequest
 {
      public function rules()
     {
         return [
-            'device_id' => 'nullable|string|min:4',
-            'status' => 'required|string|min:2|in:on,off',
-            'longitude' => 'numeric|min:1|required',
-            'latitude' => 'numeric|min:1|required',
+            'OrderRequest_id' => 'required|int|min:1|exists:order_requests,id|exists:driver_to_requests,OrderRequest_id'
         ];
         
     }
@@ -26,7 +23,8 @@ class DriverStatusandLoctionFormRequest extends APIRequest
     public function validated()
     {
         return array_merge(parent::validated(), [
-            'driver_id' =>auth()->user()->id,
+            'requestor_id' =>auth()->user()->id,
+            'type' =>auth()->user()->type,
         ]);
     }
 }

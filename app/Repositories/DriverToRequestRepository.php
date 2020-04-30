@@ -87,6 +87,24 @@ class DriverToRequestRepository extends Repository
         return $requests;
     }
 
+    public function listOneRequest($data) {
+        $requests = null;
+        if ($data['type'] === 'client') {
+            $otterModel = new \App\Models\OrderRequest();
+            $requests = $otterModel->where('user_id', $data['requestor_id'])
+                    ->where('OrderRequest_id', $data['OrderRequest_id'])
+                    ->with('statusRelation','theorder.OrderPickDropRel')
+                ->get();
+        } else {
+            $requests = $this->model->where('driver_id', $data['requestor_id'])
+                    ->where('OrderRequest_id', $data['OrderRequest_id'])
+                    ->with('theorder.statusRelation','theorder.OrderPickDropRel')
+                ->get()->pluck('theorder');
+//dd($data['requestor_id']);
+        }
+        return $requests;
+    }
+    
     /**
      * @param $data
      */

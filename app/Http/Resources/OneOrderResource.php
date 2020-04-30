@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class OrderResource extends JsonResource
+class OneOrderResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -21,6 +21,13 @@ class OrderResource extends JsonResource
             "discount_code" => $this->discount_code,
             "delivery_price" => $this->delivery_price,
             "order_status" => new StatusResource($this->whenLoaded('statusRelation')),
+             "shop_name" => $this->OrderPickDropRel->shop_name ,
+    "shop_latitude" => $this->OrderPickDropRel->shop_latitude,
+    "shop_longitude" => $this->OrderPickDropRel->shop_longitude,
+    "shop_address" => $this->OrderPickDropRel->shop_address,
+    "drop_latitude" => $this->OrderPickDropRel->drop_latitude,
+    "drop_longitude" => $this->OrderPickDropRel->drop_longitude,
+    "drop_address" => $this->OrderPickDropRel->drop_address,
         ];
     }
 }

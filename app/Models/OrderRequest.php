@@ -37,6 +37,11 @@ class OrderRequest extends Model
 //        $this->hasOne($related, $foreignKey, $localKey)
         return $this->hasOne('App\Models\OrderState', 'status_id','status');
     }
+    
+    public function OrderPickDropRel() {
+                return $this->hasOne('App\Models\OrderPickDrop', 'OrderRequest_id','id');
+
+    }
 
 
 

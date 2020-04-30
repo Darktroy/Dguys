@@ -9,3 +9,4 @@ Route::post('/driver-update-location', 'DriverController@updateLocation');
 Route::post('/client-accept-driver-offer', 'OrderRequestController@clientAcceptDriverRequest');
 Route::post('/reject-order-request', 'OrderRequestController@rejectOrderRequest');
 Route::post('/list-all-orders', 'OrderRequestController@listOrderRequest');
+Route::post('/list-specific-order', 'OrderRequestController@listOneOrderRequest');

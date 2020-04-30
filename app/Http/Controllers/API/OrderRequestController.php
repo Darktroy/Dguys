@@ -16,6 +16,8 @@ use App\Http\Requests\RejectOrderRequestFormRequest;
 use App\Http\Requests\ListAllOrderRequestFormRequest;
 use App\Http\Requests\OrderRequestAcceptByDriverFormRequest;
 use App\Http\Requests\DriverRequestAcceptByCkientFormRequest;
+use App\Http\Requests\listOneOrderRequestFormRequest;
+use  \App\Http\Resources\OneOrderResource;
 
 class OrderRequestController extends Controller
 {
@@ -81,6 +83,14 @@ class OrderRequestController extends Controller
     {
         return OrderResource::collection(
             $driverToRequestRepository->listOrderRequest(
+                $request->validated()
+            )
+        );
+    }
+    public function listOneOrderRequest(listOneOrderRequestFormRequest $request, DriverToRequestRepository $driverToRequestRepository)
+    {
+        return OneOrderResource::collection(
+            $driverToRequestRepository->listOneRequest(
                 $request->validated()
             )
         );

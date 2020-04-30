@@ -17,6 +17,10 @@ class UserResource extends JsonResource
         return [
             'id' => $this->id,
             'type' => $this->type,
+            'active' => $this->active,
+            'device_id' => $this->device_id,
+            'mobile' => $this->mobile,
+            'profile_image' => url($this->profile_image),
         ];
     }
 }

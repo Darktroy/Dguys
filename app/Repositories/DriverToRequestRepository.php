@@ -98,6 +98,9 @@ class DriverToRequestRepository extends Repository
         } else {
             $requests = $this->model->where('driver_id', $data['requestor_id'])
                     ->where('OrderRequest_id', $data['OrderRequest_id'])
+                    ->whereIn('status',['accept_by_client'
+//                        ,'accept_by_driver','cancel_by_client','cancel_by_driver','waiting_driver','waiting_client'
+                        ])
                     ->with('theorder.statusRelation','theorder.OrderPickDropRel')
                 ->get()->pluck('theorder');
 //dd($data['requestor_id']);

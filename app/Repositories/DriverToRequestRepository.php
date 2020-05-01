@@ -39,7 +39,8 @@ class DriverToRequestRepository extends Repository
          */
         $fcm->fireBase($driver_to_request['driverdetails']['device_id'], array('message' => 'Accepted '
             , 'OrderRequest_id' => $data['OrderRequest_id']));
-        \App\Models\OrderRequest::where('id', $data['OrderRequest_id'])->update(['status' => 'active']);
+        \App\Models\OrderRequest::where('id', $data['OrderRequest_id'])->update(['status' => 'active',
+            'driver_id'=>$driver_to_request['driver_id']]);
 
     }
 
@@ -139,5 +140,25 @@ class DriverToRequestRepository extends Repository
         $data_to_notify = $driver_to_request['theorder'];
         $result = $fcm->fireBase($to, $data);
         $driver_to_request->update(['status' => 'waiting_driver']);
+    }
+    
+    
+    public function changeRequestStatusByDriverOrClient($data)
+    {
+        $otterModel = new \App\Models\OrderRequest();
+        if($data['']=='client' && $data['status'] == 'completed'){
+            $requests = $otterModel->where('id', $data['OrderRequest_id'])
+                    ->where('user_id', $data['requester_id'])->update(['status'=>$data['status']]);
+        }else{
+            //here driver will change
+            if($data['status'] !='completed'){
+                // To distinct between the driver complete trip and the client once 
+                    $this->model->where('driver_id', $data['driver_id'])
+                    ->where('OrderRequest_id', $data['OrderRequest_id'])->update(['status'=>$data['status']]);
+            }else{
+                $requests = $otterModel->where('id', $data['OrderRequest_id'])
+                    ->where('driver_id', $data['requester_id'])->update(['status'=>$data['status']]);
+            }
+        }
     }
 }

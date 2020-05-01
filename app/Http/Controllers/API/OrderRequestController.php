@@ -17,7 +17,8 @@ use App\Http\Requests\ListAllOrderRequestFormRequest;
 use App\Http\Requests\OrderRequestAcceptByDriverFormRequest;
 use App\Http\Requests\DriverRequestAcceptByCkientFormRequest;
 use App\Http\Requests\listOneOrderRequestFormRequest;
-use  \App\Http\Resources\OneOrderResource;
+use App\Http\Resources\OneOrderResource;
+use App\Http\Requests\ChangeOrderRequeststatusByDriverOrClientFormRequest;
 
 class OrderRequestController extends Controller
 {
@@ -56,6 +57,26 @@ class OrderRequestController extends Controller
         }
     }
 
+    public function changeOrderRequestStatus(ChangeOrderRequeststatusByDriverOrClientFormRequest $request)
+    {
+        $modleObj =
+        new DriverToRequestRepository(new DriverToRequest());
+        try {
+            DB::beginTransaction();
+            $data = $modleObj->changeRequestStatusByDriverOrClient($request->validated());
+
+            DB::commit();
+
+            return response()->json(['data' => 'Success Sent', 'status' => 'success', 'code' => 200], 200);
+        } catch (Exception $e) {
+            DB::rollBack();
+
+            return response()->json(['error' => $e->getMessage(), 'status' => 'faild', 'code' => 400], 200);
+
+        }
+    }
+    
+    
     /**
      * @param DriverRequestAcceptByCkientFormRequest $request
      */

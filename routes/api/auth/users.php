@@ -10,3 +10,6 @@ Route::post('/client-accept-driver-offer', 'OrderRequestController@clientAcceptD
 Route::post('/reject-order-request', 'OrderRequestController@rejectOrderRequest');
 Route::post('/list-all-orders', 'OrderRequestController@listOrderRequest');
 Route::post('/list-specific-order', 'OrderRequestController@listOneOrderRequest');
+Route::post('/change-order-status', 'OrderRequestController@changeOrderRequestStatus');
+Route::post('/add-complain',ComplainController::class);
+Route::post('/add-rate', RatingController::class);

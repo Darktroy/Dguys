@@ -9,7 +9,7 @@ class OrderRequest extends Model
     
 
     protected $fillable = [
-                  'user_id',
+                  'user_id','driver_id',
                   'estimated_price_by_client',
                   'order_description',
                   'status',

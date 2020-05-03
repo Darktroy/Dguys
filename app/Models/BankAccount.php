@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class BankAccount extends Model
 {
     
-    protected $table = 'bank_account_details';
+//    protected $table = 'bank_account_details';
     /**
      * Attributes that should be mass-assignable.
      *

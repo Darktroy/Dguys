@@ -27,7 +27,7 @@ class RegisterDeliveryFormRequest extends APIRequest
             'longitude' => 'numeric|min:1|required',
             'address' => 'string|min:1|nullable',
             'city' => 'string|min:1|required',
-            'is_citizen' => 'boolean|required',
+            'is_citizen' => 'required|min:1|in:1,0',
             'national_card_serial' => 'string|min:1|required',
             'national_card_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'license_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',

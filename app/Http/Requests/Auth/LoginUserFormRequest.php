@@ -12,7 +12,7 @@ class LoginUserFormRequest extends APIRequest
             'password' => 'required',
             'mobile' => 'required',
             'device_id'=> 'required',
-            'type'=> 'required|in:client,delivery_guy',
+//            'type'=> 'required|in:client,delivery_guy',
         ];
     }
 }

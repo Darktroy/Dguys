@@ -14,7 +14,8 @@ class LoginController extends Controller
      */
     public function __invoke(LoginUserFormRequest $request)
     {
-        if (auth()->attempt(Arr::only($request->validated(), ['password', 'mobile', ' type']))) {
+        if (auth()->attempt(Arr::only($request->validated(), ['password', 'mobile']))) {
+//        if (auth()->attempt(Arr::only($request->validated(), ['password', 'mobile', ' type']))) {
             auth()->user()['device_id'] = $request->validated()['device_id'];
             auth()->user()->save();
 

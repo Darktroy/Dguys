@@ -10,11 +10,15 @@
             <file>file:/opt/lampp/htdocs/Dguys/routes/api/auth/users.php</file>
             <file>file:/opt/lampp/htdocs/Dguys/app/Models/Ratings.php</file>
             <file>file:/opt/lampp/htdocs/Dguys/app/Http/Controllers/API/Auth/LoginController.php</file>
+            <file>file:/opt/lampp/htdocs/Dguys/.env</file>
             <file>file:/opt/lampp/htdocs/Dguys/app/Http/Controllers/API/OrderRequestController.php</file>
+            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Requests/Auth/LoginUserFormRequest.php</file>
             <file>file:/opt/lampp/htdocs/Dguys/app/Http/Requests/RateFormRequest.php</file>
+            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Resources/UserResource.php</file>
             <file>file:/opt/lampp/htdocs/Dguys/app/Http/Requests/ComplainFormRequest.php</file>
             <file>file:/opt/lampp/htdocs/Dguys/app/Repositories/DeliveryGuyDetailRepository.php</file>
             <file>file:/opt/lampp/htdocs/Dguys/app/Http/Controllers/API/RatingController.php</file>
+            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Requests/Auth/RegisterDeliveryFormRequest.php</file>
             <file>file:/opt/lampp/htdocs/Dguys/app/Repositories/RatingRepository.php</file>
             <file>file:/opt/lampp/htdocs/Dguys/app/Models/Complain.php</file>
             <file>file:/opt/lampp/htdocs/Dguys/app/Http/Controllers/API/Auth/RegisterDeliveryController.php</file>

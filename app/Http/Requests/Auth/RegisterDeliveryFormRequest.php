@@ -17,7 +17,7 @@ class RegisterDeliveryFormRequest extends APIRequest
             'password' => 'required|min:6|max:32|confirmed',
             // password_confirmation
 //            'profile_image' => 'nullable|min:6|image|mimes:jpeg,png,jpg,gif,svg',
-            'profile_image' => 'required|min:6|image',
+            'profile_image' => 'nullable|min:6|image',
             'accept-terms' => 'required|in:1',
             //
             'model' => 'string|min:1|required',
@@ -30,10 +30,10 @@ class RegisterDeliveryFormRequest extends APIRequest
             'city' => 'string|min:1|required',
             'is_citizen' => 'required|min:1|in:1,0',
             'national_card_serial' => 'string|min:1|required',
-            'national_card_image' => 'required|image',
+            'national_card_image' => 'nullable|image',
 //            'national_card_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
 //            'license_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'license_image' => 'required|image',
+            'license_image' => 'nullable|image',
             //
             'bank_name' => 'string|min:1|required',
             'bank_account_serial' => 'string|required',

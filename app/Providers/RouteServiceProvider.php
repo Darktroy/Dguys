@@ -26,6 +26,14 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     protected $namespace = 'App\Http\Controllers';
+    
+    
+/**
+ * The path to the "home" route for your application.
+ *
+ * @var string
+ */
+public const HOME = '/';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -52,8 +60,18 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapAuthWebRoutes();
         $this->mapPublicWebRoutes();
         $this->mapGuestWebRoutes();
+
+        //
     }
 
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    
     public function mapAuthAPIRoutes()
     {
         foreach (glob(base_path('routes/api/auth/*.php')) as $file) {

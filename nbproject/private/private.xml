@@ -3,26 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Models/BankAccount.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Controllers/API/ComplainController.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/database/migrations/2020_04_22_194418_create_banks_table.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Models/bank.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/routes/api/auth/users.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Models/Ratings.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Controllers/API/Auth/LoginController.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/.env</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Controllers/API/OrderRequestController.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Requests/Auth/LoginUserFormRequest.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Requests/RateFormRequest.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Resources/UserResource.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Requests/ComplainFormRequest.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Repositories/DeliveryGuyDetailRepository.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Controllers/API/RatingController.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Requests/Auth/RegisterDeliveryFormRequest.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Repositories/RatingRepository.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Models/Complain.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Controllers/API/Auth/RegisterDeliveryController.php</file>
-            <file>file:/opt/lampp/htdocs/Dguys/app/Repositories/ComplainRepository.php</file>
+            <file>file:/opt/lampp/htdocs/Dguys/app/Providers/RouteServiceProvider.php</file>
+            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Controllers/Auth/LoginController.php</file>
+            <file>file:/opt/lampp/htdocs/Dguys/routes/web.php</file>
+            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Controllers/Auth/RegisterController.php</file>
+            <file>file:/opt/lampp/htdocs/Dguys/routes/web/public/users.php</file>
+            <file>file:/opt/lampp/htdocs/Dguys/routes/web/public/deliveries.php</file>
+            <file>file:/opt/lampp/htdocs/Dguys/routes/web/auth/users.php</file>
+            <file>file:/opt/lampp/htdocs/Dguys/app/Http/Controllers/HomeController.php</file>
+            <file>file:/opt/lampp/htdocs/Dguys/routes/web/public/bank_accounts.php</file>
         </group>
     </open-files>
 </project-private>

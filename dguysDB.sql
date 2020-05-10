@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 01, 2020 at 12:32 PM
+-- Generation Time: May 10, 2020 at 01:41 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -21,6 +21,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `dguys`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `banks`
+--
+
+CREATE TABLE `banks` (
+  `id` int(11) NOT NULL,
+  `bank_name_ar` varchar(255) NOT NULL,
+  `bank_name_en` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+
+--
+-- Dumping data for table `banks`
+--
+
+INSERT INTO `banks` (`id`, `bank_name_ar`, `bank_name_en`, `created_at`, `updated_at`) VALUES
+(1, 'تيست 1', 'test bank 1', '2020-05-03 10:02:38', NULL),
+(2, 'تيست بنك 2', 'trest bank 2', '2020-05-03 10:02:38', NULL);
 
 -- --------------------------------------------------------
 
@@ -525,7 +547,7 @@ CREATE TABLE `users` (
   `first_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `mobile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `profile_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'api/ksa',
@@ -552,7 +574,9 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `mobile`, `email_
 (28, NULL, NULL, NULL, '01120200428', NULL, '$2y$10$tqYg9TnINhCroeDA/UkIue.QnPfBaeLBNBRfdjeZXa9mGGYXnZvIy', '7ZnPSmO3OqzqdbaUeSrnZFoRw8EZbVfdFGlhCpvD.png', NULL, 0, 'client', NULL, '2020-04-28 11:02:00', '2020-04-28 11:02:00'),
 (29, NULL, NULL, NULL, '011202004282', NULL, '$2y$10$l4N/BXSemninIUrE8lE91Od7.iB55RMhojha3D1teDQW3npEYMCMC', 'blNu1zaeD2KCwqTHEgki6086Xsp4scHDCHdLGBXv.png', 'upo[p', 0, 'client', NULL, '2020-04-28 11:03:02', '2020-04-28 11:03:02'),
 (30, 'trest first name', 'tes last name', NULL, '012202004282', NULL, '$2y$10$U4bY9pTbLsHdbPMHGMT22elotssvAoruWsTlAwvDmegDhvke7Yn2y', 'api/ksa', 'device_id', 0, 'client', NULL, '2020-04-28 11:04:55', '2020-04-28 11:04:55'),
-(31, 'trest first name', 'tes last name', NULL, '012202004283', NULL, '$2y$10$iMKz43HCvJJqLAyJ4BOP8eNJfGLxlLuFXLa4Xe7uue8FZ3y0R4rxG', 'api/ksa', 'device_id', 0, 'delivery_guy', NULL, '2020-04-28 11:06:38', '2020-04-28 11:06:38');
+(31, 'trest first name', 'tes last name', NULL, '012202004283', NULL, '$2y$10$iMKz43HCvJJqLAyJ4BOP8eNJfGLxlLuFXLa4Xe7uue8FZ3y0R4rxG', 'api/ksa', 'device_id', 0, 'delivery_guy', NULL, '2020-04-28 11:06:38', '2020-04-28 11:06:38'),
+(32, NULL, NULL, 'admin@gmail.com', '01002433739', NULL, '$2y$10$3F0WJ9BSW0VLropWc0ln5eA3mC1MUwzLeSknLbPCX8ObWXqPQ6GYG', 'api/ksa', NULL, 0, 'client', NULL, '2020-05-10 06:28:34', '2020-05-10 06:28:34'),
+(34, NULL, NULL, 'test@test.test', NULL, NULL, '$2y$10$nfbUwJfrAt.IITm6WBQ7M.Pq7BrtXh5fQngddZDvtclTMc4nCbNEu', 'api/ksa', NULL, 0, 'client', NULL, '2020-05-10 06:46:51', '2020-05-10 06:46:51');
 
 -- --------------------------------------------------------
 
@@ -586,6 +610,12 @@ INSERT INTO `vehicles` (`id`, `created_at`, `updated_at`, `user_id`, `model`, `p
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `banks`
+--
+ALTER TABLE `banks`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `bank_account_details`
@@ -732,6 +762,12 @@ ALTER TABLE `vehicles`
 --
 
 --
+-- AUTO_INCREMENT for table `banks`
+--
+ALTER TABLE `banks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `bank_account_details`
 --
 ALTER TABLE `bank_account_details`
@@ -831,7 +867,7 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `vehicles`

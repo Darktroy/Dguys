@@ -27,9 +27,9 @@ class deliveryGuyCreation extends ApiRequest
     {
         return [
             'mobile' => 'required|min:6|unique:users,mobile',
-            'first_name' => 'required|string|min:6',
-            'last_name' => 'required|string|min:6',
-           'email' => 'nullable|min:6|email|unique:users,email',
+            'first_name' => 'required|string|min:3',
+            'last_name' => 'required|string|min:3',
+           'email' => 'nullable|email|unique:users,email',
            'code' => 'nullable|min:6|unique:invtations,code',
             'password' => 'required|min:6|required_with:c_password|same:c_password',
             'c_password' => 'required|min:6',
@@ -38,7 +38,7 @@ class deliveryGuyCreation extends ApiRequest
             //
             'model' => 'string|min:1|required',
             'plate_number' => 'string|required',
-            'type' => 'string|min:1|required', 
+            'type' => 'string|min:1|required',
             //
             'latitude' => 'numeric|min:1|required',
             'longitude' => 'numeric|min:1|required',
@@ -47,7 +47,7 @@ class deliveryGuyCreation extends ApiRequest
             'is_citizen' => 'boolean|required',
             'national_card_serial' => 'string|min:1|required',
             'national_card_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'license_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg', 
+            'license_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             //
             'bank_name' => 'string|min:1|required',
             'bank_account_serial' => 'string|required',

@@ -10,8 +10,8 @@ class RegisterDeliveryFormRequest extends APIRequest
     {
         return [
             'mobile' => 'required|min:6|unique:users,mobile',
-            'first_name' => 'required|string|min:6',
-            'last_name' => 'required|string|min:6',
+            'first_name' => 'required|string|min:3',
+            'last_name' => 'required|string|min:3',
             'email' => 'nullable|min:6|email|unique:users,email',
             'code' => 'nullable|min:6|unique:invtations,code',
             'password' => 'required|min:6|max:32|confirmed',
